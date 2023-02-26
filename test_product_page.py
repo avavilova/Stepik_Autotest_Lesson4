@@ -1,4 +1,3 @@
-from selenium.webdriver.common.by import By
 from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
@@ -46,7 +45,6 @@ class TestUserAddToBasketFromProductPage():
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
 @pytest.mark.need_review
 def test_guest_can_add_product_to_basket(browser, link):
-    #link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/ "
     page = ProductPage(browser, link)
     page.open()
     page.add_to_cart()

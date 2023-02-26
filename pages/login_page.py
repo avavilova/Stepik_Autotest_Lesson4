@@ -4,13 +4,14 @@ import time
 
 class LoginPage(BasePage):
 
-
     def should_be_login_page(self):
+        #проверка url, наличия формы логина и регистрации
         self.should_be_login_url()
         self.should_be_login_form()
         self.should_be_register_form()
 
     def register_new_user(self, email, password):
+        #регистрация нового пользователя
         self.browser.find_element(*LoginPageLocators.REGISTER_EMAIL).send_keys(email)
         self.browser.find_element(*LoginPageLocators.REGISTER_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.CONFIRM_REGISTER_PASSWORD).send_keys(password)
